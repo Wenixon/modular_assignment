@@ -298,7 +298,8 @@ h2 {
     color: #FFF;
     letter-spacing: .1em;
     max-width: 225px;
-    padding: 19px 41px;
+    width: 100%;
+    padding: 19px 40px;
     background: #34547A;
     min-height: 65px;
 }
