@@ -81,15 +81,17 @@ p {
     margin-top: 0;
 }
 
+p:last-child {
+    margin-bottom: 0;
+}
+
 h1, 
 h2 {
     color: #000
 }
 
 .basic-text {
-    margin: 0;
-    width: 100%;
-    max-width: 540px;
+    margin-bottom: 50px;
 }
 
 .title {
@@ -97,7 +99,7 @@ h2 {
     line-height: 1.18;
     font-weight: 500;
     margin: 0;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 
@@ -140,6 +142,7 @@ h2 {
 
 .nav-list {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     align-items: center;
     opacity: 1;
@@ -150,7 +153,6 @@ h2 {
 }
 
 .nav-item {
-    display: inline-block;
     font-size: 16px;
     line-height: 1.64;
     font-weight: 400;
@@ -181,7 +183,7 @@ h2 {
     margin-top: -1px
 }
 
-.nav-item + .nav-item{
+.nav-item{
     padding-left: 42px;
 }
 
@@ -255,12 +257,10 @@ h2 {
     background: #EEEFF1;
     padding-top: 126px;
     padding-bottom: 145px;
+    margin-bottom: 122px;
 
 }
 
-.design-frame {
-    position: relative;
-}
 .design-row {
     position: relative;
     display: flex;
@@ -276,16 +276,12 @@ h2 {
     position: relative;
 }
 
-.design-col > .basic-text {
-    padding-bottom: 50px;
-    margin: 0;
-}
+
 .title-design {
     font-size: 48px;
     line-height: 1.64;
     font-weight: 500;
-    margin: 0;
-    padding-bottom: 35px;
+    margin: 0 0 35px 0;
 }
 
 .design-btn,
@@ -301,9 +297,10 @@ h2 {
     text-transform: uppercase;
     color: #FFF;
     letter-spacing: .1em;
-    width: 225px;
-    height: 65px;
+    max-width: 225px;
+    padding: 19px 41px;
     background: #34547A;
+    min-height: 65px;
 }
 
 .laptop {
@@ -315,7 +312,7 @@ h2 {
 }
 /*-------------------- ABOUT -------------------- */
 .section-about {
-    padding: 122px 0 90px 0;
+    margin-bottom: 90px;
 }
 
 .about-text {
@@ -325,9 +322,6 @@ h2 {
     margin: 0 auto;
 }
 
-.about-text .basic-text {
-    margin: 0;
-}
 /*-------------------- PROJECT -------------------- */
 .project-row {
     padding-top: 100px;
@@ -336,6 +330,7 @@ h2 {
 .section-project {
     min-height: 250px;
     background: #34547A;
+    margin-bottom: 100px;
 }
 
 .project-list {
@@ -351,15 +346,19 @@ h2 {
 
 .project-item {
     padding-bottom: 50px;
+    max-width: 145px;
 } 
 
 .project-text {
     display: inline-block;
     padding-left: 20px;
+    max-width: 90px;
+    overflow: visible;
 }
 
 .icon-project {
     font-size: 50px;
+    vertical-align: top;
 }
 
 .project-num {
@@ -371,11 +370,7 @@ h2 {
 /*-------------------- SKILLS -------------------- */
 
 .section-skill {
-    padding: 100px 0 111px;
-}
-
-.skills {
-    padding-top: 18px;
+    margin-bottom: 111px;
 }
 
 .skill-row {
@@ -413,10 +408,6 @@ h2 {
 
 }
 
-.section-header .title {
-    padding: 25px 0 15px;
-}
-
 .skill-title {
     color: #727272;
     font-size: 16px;
@@ -446,6 +437,7 @@ h2 {
 .section-howwork {
     background: #EEEFF1;
     padding: 98px 0 100px 0;
+    margin-bottom: 28px;
 }
 
 .howwork-text {
@@ -461,7 +453,6 @@ h2 {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 48px;
 }
 
 .icon-Vector {
@@ -475,6 +466,9 @@ h2 {
 }
 
 /*-------------------- COLLAGE -------------------- */
+.section-collage {
+    margin-bottom: 100px;
+}
 
 .img-bar {
     display: flex;
@@ -482,12 +476,8 @@ h2 {
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    padding-top: 28px;
     justify-content: center;
-}
-
-.collage-glass {
-    position: relative;
+    margin-bottom: 70px;
 }
 
 .icon-view {
@@ -498,7 +488,6 @@ h2 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 500;
 }
 
 .collage-box {
@@ -507,18 +496,25 @@ h2 {
     max-width: 480px;
 }
 
-.img-item:hover {
-    background: url(img/blueworktable.png);
-    background-size: contain;
+.color-eye {
+    background-color: #34537ac2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    top: -100%;
+}
+
+.color-eye:hover {
+    transition: all .1s ease;
+    opacity: 1;
 }
 
 .mic-logo {
-    padding: 70px 0 100px 0;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 /*-------------------- FEEDBACK -------------------- */
 .section-feedback {
     background: #EEEFF1;
@@ -533,14 +529,12 @@ h2 {
 }
 
 .feedback-text,
-.feedback-form,
-.feedback-btn {
+.feedback-form {
     margin: 0 auto;
     text-align: center;
 }
-
-.feedback-form {
-    padding: 56px 0 40px;
+.feedback-text {
+    margin-bottom: 56px;
 }
 
 .feedback-name {
@@ -577,25 +571,32 @@ h2 {
     resize: none;
 }
 
-.feedback-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #FFF;
-    letter-spacing: .1em;
-    width: 190px;
-    height: 55px;
-    background: #34547A;
+.feedback-massage {
+    margin-bottom: 40px;
 }
+
+.feedback-button {
+    display: inline-block;
+    border: none;
+    padding: 16px 41px;
+    font-size: 14px;
+    line-height: 1.64;
+    letter-spacing: .15em;
+    background: #34547A;
+    color: #fff;
+    text-transform: uppercase;
+    max-width: 190px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
 /*-------------------- FOOTER -------------------- */
 .section-footer {
     background: #34547A;
 }
 
 .footer-name p {
-    margin: 0;
     color: #fff;
 }
 
@@ -610,12 +611,18 @@ h2 {
 }
 .footer-vk {
     list-style: none;
-    color: #fff;
     display: flex;
     flex-direction: row;
     margin: 0;
     padding-top: 13px;
 }
+
+.icon-vk {
+    text-decoration: none;
+    color: #FFF;
+}
+
+
 
 .footer-item {
     font-size: 23px;
@@ -624,7 +631,7 @@ h2 {
 
 .copyrite-name {
     font-size: 21px;
-    padding-bottom: 7px;
+    margin-bottom: 7px;
 }
 
 .copyrite-text {
@@ -667,8 +674,18 @@ h2 {
     .section-skill,
     .section-about,
     .section-design,
-    .section-feedback {
+    .section-project,
+    .section-collage {
         padding: 40px 0 40px;
+        margin-bottom: 20px;
+        
+    }
+
+    .section-feedback {
+        padding: 40px 0;
+    }
+    .design-frame {
+        margin-bottom: 30px;
     }
 
     .project-list > .project-item {
@@ -763,10 +780,6 @@ h2 {
         text-align: center;
     }
 
-    .basic-text {
-        font-size: 5vw;
-    }
-
     .design-btn {
         display: block;
         margin: 0 auto;
@@ -825,3 +838,7 @@ h2 {
         justify-content: center;   
     }
 }
+
+
+
+
