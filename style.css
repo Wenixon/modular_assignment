@@ -838,6 +838,18 @@ h2 {
         flex-direction: column;
         justify-content: center;   
     }
+
+    .section-about,
+    .section-project,
+    .section-collage {
+        padding: 0;
+    }
+
+    .img-bar {margin-bottom: 0px;}
 }
+
+    .section-skill {
+        padding-top: 20px;
+    }
 
 
