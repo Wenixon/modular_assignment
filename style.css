@@ -839,8 +839,8 @@ h2 {
         justify-content: center;   
     }
 
-    .section-about,
     .section-project,
+    .section-about,
     .section-collage {
         padding: 0;
     }
